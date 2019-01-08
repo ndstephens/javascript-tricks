@@ -4,6 +4,7 @@ const name = { first: 'John', middle: 'Bob', last: 'Doe' }
 
 //? simplest way is to use 'delete' keyword
 //? HOWEVER, this permanently deletes it from the object
+
 // delete name.last
 // console.log(name) // { first: 'John', middle: 'Bob' }
 
