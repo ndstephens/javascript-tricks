@@ -11,6 +11,20 @@
       }
     ],
     "no-console": "off",
-    "no-prototype-builtins": "off"
+    "spaced-comment": "off",
+    "no-prototype-builtins": "off",
+    "no-restricted-syntax": [
+      2,
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ],
+    "no-unused-vars": [
+      1,
+      {
+        "ignoreSiblings": true,
+        "argsIgnorePattern": "res|next|e|^err"
+      }
+    ]
   }
 }

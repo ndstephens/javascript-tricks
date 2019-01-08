@@ -1,14 +1,26 @@
 // Convert object to array
 
-var person = { name: "Amy", age: 40 };
+const person = { name: 'Amy', age: 40 }
 
-var arr = [];
+const arr = []
 
-Object.keys(person).forEach(key => arr.push([key, person[key]]));
+//
+//*--------------------------------------------------/
+//*     OBJECT.KEYS(obj)
+//*--------------------------------------------------/
+//? creates an array of the keys, use 'forEach' to loop over that array and push the result onto a new array (not pure)
 
-console.log(arr); // [ [ 'name', 'Amy' ], [ 'age', 40 ] ]
+Object.keys(person).forEach(key => arr.push([key, person[key]]))
+console.log(arr) // [ [ 'name', 'Amy' ], [ 'age', 40 ] ]
 
-var result = Object.keys(person).map(key => [key, person[key]]);
-console.log(result); // [ [ 'name', 'Amy' ], [ 'age', 40 ] ]
+//? or use 'map' to return a new array (pure)
+const result = Object.keys(person).map(key => [key, person[key]])
+console.log(result) // [ [ 'name', 'Amy' ], [ 'age', 40 ] ]
 
-console.log(Object.entries(person)); // [ [ 'name', 'Amy' ], [ 'age', 40 ] ]
+//
+//*--------------------------------------------------/
+//*     OBJECT.ENTRIES(obj)
+//*--------------------------------------------------/
+//? simply returns an array-of-arrays, consisting of each key-value pair
+
+console.log(Object.entries(person)) // [ [ 'name', 'Amy' ], [ 'age', 40 ] ]

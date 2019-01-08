@@ -1,29 +1,36 @@
 <html>
+  <head></head>
 
-<head></head>
-
-<body style="
+  <body
+    style="
       display: grid;
       align-items: center;
       justify-content: center;
-    ">
-  <input name="username" placeholder="Input username">
-  <input name="password" placeholder="Input password">
-</body>
+    "
+  >
+    <!-- the 'name' attribute makes this possible -->
+    <input name="username" placeholder="Input username" />
+    <input name="password" placeholder="Input password" />
+  </body>
 
-<script>
-  // Computed Properties
-  var state = {};
+  <script>
+    const username = document.querySelector('[name="username"]')
+    const password = document.querySelector('[name="password"]')
 
-  var onKeyup = event => {
-    var value = event.target.value;
-    var name = event.target.name;
+    const state = {}
 
-    state[name] = value;
-  }
+    const onKeyup = event => {
+      // 'name' is from the 'name'-attribute on each input element
+      const name = event.target.name
+      const value = event.target.value
 
-  username.addEventListener('keyup', onKeyup);
-  password.addEventListener('keyup', onKeyup);
-</script>
+      // [name] is a Computed Property
+      state[name] = value
 
+      console.log(state)
+    }
+
+    username.addEventListener('keyup', onKeyup)
+    password.addEventListener('keyup', onKeyup)
+  </script>
 </html>

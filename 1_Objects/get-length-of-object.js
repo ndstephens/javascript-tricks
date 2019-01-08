@@ -1,8 +1,14 @@
 // Get length of object
 
-var arr = [1, 2, 3];
+const obj = { a: 1, b: 2, c: 3 }
 
-var obj = { a: 1, b: 2, c: 3 };
+//
+//*--------------------------------------------------/
+//*     OBJECT.KEYS(obj)
+//*--------------------------------------------------/
+//? returns an array holding all the object's keys
+//? can call the 'length' property on an array
 
-var length = Object.keys(obj).length;
-console.log(length); // 3
+const arrOfKeys = Object.keys(obj)
+
+console.log(arrOfKeys.length) // 3
