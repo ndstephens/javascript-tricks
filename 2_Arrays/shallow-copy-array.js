@@ -1,38 +1,70 @@
 // Shallow copy / clone an array
 
-/* Shallow copy array when mutating original */
-var fruits = ["apple", "banana"];
-var newFruits = fruits;
-newFruits.push("cherry");
-console.log(fruits);
-// ['apple', 'banana', 'cherry']
+let fruits
+let newFruits
 
-/* .slice() */
+//*--------------------------------------------------/
+//*     COPY BY REFERENCE ** USUALLY NOT WANTED **
+//*--------------------------------------------------/
+//? mutating the copied array also changes the original
 
-var fruits = ["apple", "banana"];
-var newFruits = fruits.slice();
-newFruits.push("cherry");
-console.log(fruits);
-// ['apple', 'banana']
+fruits = ['apple', 'banana']
 
-/* [].concat(arr) */
+newFruits = fruits
+newFruits.push('cherry')
 
-var fruits = ["apple", "banana"];
-var newFruits = [].concat(fruits);
-newFruits.push("cherry");
-console.log(fruits);
-// ['apple', 'banana']
+//? original array (fruits) IS effected
+console.log(fruits) //* ['apple', 'banana', 'cherry']
 
-/* Spread operator */
+//
+//*--------------------------------------------------/
+//* Spread operator -- SHALLOW COPY **BEST METHOD**
+//*--------------------------------------------------/
+//? returns a shallow copy, not a reference
 
-var fruits = ["apple", "banana"];
-var newFruits = [...fruits, "cherry"];
-console.log(fruits);
-// ['apple', 'banana']
+fruits = ['apple', 'banana']
 
-/* Often when you are mutating an array, there is a method which is non-mutating and creates a new copy of the array on its own; i.e. .concat() instead of .push() */
+newFruits = [...fruits, 'cherry']
 
-var fruits = ["apple", "banana"];
-var newFruits = fruits.concat("cherry");
-console.log(fruits);
-// ['apple', 'banana']
+//? original array (fruits) unaffected
+console.log(fruits) // ['apple', 'banana']
+
+//
+//*--------------------------------------------------/
+//*     .slice() -- SHALLOW COPY
+//*--------------------------------------------------/
+//? makes a shallow copy, not a reference
+
+fruits = ['apple', 'banana']
+
+newFruits = fruits.slice()
+newFruits.push('cherry')
+
+//? original array (fruits) unaffected
+console.log(fruits) // ['apple', 'banana']
+
+//
+//*--------------------------------------------------/
+//*     [].concat(arr) -- SHALLOW COPY
+//*--------------------------------------------------/
+//? returns a shallow copy, not a reference
+
+fruits = ['apple', 'banana']
+
+newFruits = [].concat(fruits)
+newFruits.push('cherry')
+
+//? original array (fruits) unaffected
+console.log(fruits) // ['apple', 'banana']
+
+//
+//*--------------------------------------------------/
+//*     Arr.concat(newItem) -- SHALLOW COPY
+//*--------------------------------------------------/
+
+fruits = ['apple', 'banana']
+
+newFruits = fruits.concat('cherry')
+
+//? original array (fruits) unaffected
+console.log(fruits) // ['apple', 'banana']
