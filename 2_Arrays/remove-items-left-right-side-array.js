@@ -1,23 +1,51 @@
 // Remove items from left / right side of array
 
-var nums = [23, 987, 45, 89];
+//**** DOES NOT MUTATE ORIGINAL ARRAY ****
 
-var removeFromLeft = nums.slice(0, 3);
-console.log(removeFromLeft);
+//*--------------------------------------------------/
+//*     array.SLICE()
+//*--------------------------------------------------/
+//? slice() returns a sub-array copy based on the values we give it
+//? first param is starting index
+//? second param (optional) is ending index (non-inclusive)
+//? if second param is not given then rest of array is included
 
-var removeFromRight = nums.slice(1);
-console.log(removeFromRight);
+const nums = [23, 987, 45, 89]
 
-console.log(nums);
+//? start of array until end (non-inclusive of final index)
+const removeFromLeft = nums.slice(0, -1) //* simpler than writing...
+// const removeFromLeft = nums.slice(0, nums.length - 1)
+console.log(removeFromLeft) // [23, 987, 45 ]
 
-var getNthItem = (arr, num) => arr.slice(num - 1, num)[0];
+//? start at index 1 (second value) and go until the end of the array
+const removeFromRight = nums.slice(1)
+console.log(removeFromRight) // [ 987, 45, 89]
 
-var res = getNthItem(nums, 3);
-console.log(res);
+//? original array was never modified or effected (not mutated)
+console.log(nums) // [23, 987, 45, 89]
+
+//
+//* ------------------------------------------------------------------------- /
+
+//* CREATE A FUNCTION TO RETURN A COPY OF AN ITEM AT 'N-th' POSITION
+const getNthItem = (arr, num) => arr.slice(num - 1, num)[0]
+
+const res = getNthItem(nums, 3)
+console.log(res) // 45
+
+//? original array still not effected
+console.log(nums) // [23, 987, 45, 89]
 
 function offsetArray(arr, offset) {
-  return [...arr.slice(offset), ...arr.slice(0, offset)];
+  return [...arr.slice(offset), ...arr.slice(0, offset)]
 }
 
-var result = offsetArray([1, 2, 3, 4], 0);
-console.log(result);
+//
+//* ------------------------------------------------------------------------- /
+
+//* CREATE A FUNCTION TO OFFSET AN ARRAY (make it cycle around starting at a given index).  Even works with negative values
+
+const result = offsetArray([1, 2, 3, 4], 2)
+//? returns [ [ 3, 4 ], [ 1, 2 ] ] without using the Spread Operator
+
+console.log(result) // [ 3, 4, 1, 2 ]

@@ -1,8 +1,12 @@
 // Find shared values between two arrays
 
-var men = ["Jim", "Doug", "Fred"];
+const men = ['Jim', 'Doug', 'Fred']
 
-var over50 = ["Angie", "Dave", "Jessica", "Fred"];
+const over50 = ['Angie', 'Dave', 'Jessica', 'Fred']
 
-var shared = over50.filter(person => men.includes(person));
-console.log(shared);
+//? Doesn't matter which array we start with...same result
+
+const shared = over50.filter(person => men.includes(person))
+// const shared = men.filter(man => over50.includes(man))
+
+console.log(shared) // [ 'Fred' ]

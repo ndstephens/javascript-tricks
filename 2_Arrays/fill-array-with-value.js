@@ -11,7 +11,9 @@
 //? For example, we want to 'hide' the first three numbers in a phone number
 
 const phoneNumber = '555-525-5252'
+
 // const newNumber = phoneNumber.split('').filter(num => num !== '-')
 const newNumber = phoneNumber.split('')
+
 //* 'fill' the first three items of the array with a '*'
 console.log(newNumber.fill('*', 0, 3).join(''))
