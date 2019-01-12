@@ -19,6 +19,7 @@
     "spaced-comment": "off",
     "func-names": "off",
     "no-prototype-builtins": "off",
+    "no-continue": "off",
     "no-restricted-syntax": [
       2,
       "ForInStatement",

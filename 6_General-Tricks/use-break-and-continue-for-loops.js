@@ -1,31 +1,35 @@
 // Use 'break' and 'continue' for greater control when iterating
 
-var users = [
-  { name: "Don", country: "England" },
-  { name: "Vladimir", country: "Russia" },
-  { name: "Maria", country: "Spain" }
-];
+const users = [
+  { name: 'Don', country: 'England' },
+  { name: 'Vladimir', country: 'Russia' },
+  { name: 'Maria', country: 'Spain' },
+]
 
-// var russianUser;
+//* BREAK
+//? when you find the Russian user, set that user to the 'russianUser' variable and break from the loop (you no longer need to keep searching through 'users')
 
-// for (let user of users) {
-//   console.log(user);
-//   if (user.country === 'Russia') {
-//     russianUser = user;
-//     break;
-//   }
-// }
-
-// console.log(russianUser);
-
-var newUsers = [];
-
-for (let user of users) {
-  if (user.name === "Don") {
-    continue;
+let russianUser
+for (const user of users) {
+  console.log(user)
+  if (user.country === 'Russia') {
+    russianUser = user
+    break
   }
-  console.log(user);
-  newUsers.push(user);
 }
+console.log(russianUser) // { name: 'Vladimir', country: 'Russia' }
 
-console.log(newUsers);
+//
+//* CONTINUE
+//? add all 'users' to the array of 'newUsers', except for anyone named 'Don'.  Skip the rest of the code in that loop cycle, but overall keep the iteration of the 'users' array going
+
+const newUsers = []
+for (const user of users) {
+  if (user.name === 'Don') {
+    continue
+  }
+  console.log(user)
+  newUsers.push(user)
+}
+console.log(newUsers)
+//[{ name: 'Vladimir', country: 'Russia' }, { name: 'Maria', country: 'Spain' }]
