@@ -1,18 +1,24 @@
 // Function that can be called only once
 
-// var once = (fn, ...args) => {
-//   let called = false;
-//   console.log(args);
-//   return function() {
-//     if (!called) {
-//       called = true;
-//       return fn(...args);
-//     }
-//   }
-// }
+//* Similar to a Singleton
 
-// var onClick = (text, time) => console.log(`${text} at ${time}`);
+const button = document.querySelector('button')
 
-// var button = document.querySelector('button');
+const once = (fn, ...args) => {
+  let called = false
+  console.log(args)
+  return function() {
+    if (!called) {
+      called = true
+      return fn(...args)
+    }
+    return null
+  }
+}
 
-// button.addEventListener('click', once(onClick, 'form submitted!', new Date(Date.now())));
+const onClick = (text, time) => console.log(`${text} at ${time}`)
+
+button.addEventListener(
+  'click',
+  once(onClick, 'form submitted!', new Date(Date.now())),
+)
