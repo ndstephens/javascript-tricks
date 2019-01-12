@@ -1,36 +1,39 @@
 // Use IIFEs or block scope (w/ let / const) to hide / expose data
 
-/* IIFE */
-var getUserData = (function() {
-  let name = "John";
-  let email = "john@gmail.com";
-  let password = "alsdfjaskdf";
+//* IIFE
+const getUserData = (function() {
+  const name = 'John'
+  const email = 'john@gmail.com'
+  const password = 'alsdfjaskdf'
 
   return {
-    name: name,
-    email: email
-  };
-})();
+    name,
+    email,
+  }
+})()
 
-getUserData;
+console.log(getUserData)
 // {name: "John", email: "john@gmail.com"}
 
-/* Using block scope with let */
+//
+//
+//* Using block scope with const (same with let)
 {
-  let name = "John";
-  let email = "john@gmail.com";
-  let password = "alskdfjalk";
+  const name = 'John'
+  const email = 'john@gmail.com'
+  const password = 'alskdfjalk'
 
-  let sayHi = () => {
-    return `Hi, ${name}!`;
-  };
+  const sayHi = () => {
+    return `Hi, ${name}!`
+  }
 
+  //? PURPOSEFULLY use 'var' here so that 'result' is available outside of this block.  similar to the 'return' statement in the IIFE above.  here we put 'result' on the global scope
   var result = {
     name,
     email,
-    sayHi
-  };
+    sayHi,
+  }
 }
 
-result.sayHi();
+console.log(result.sayHi())
 // "Hi, John!"

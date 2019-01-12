@@ -1,6 +1,6 @@
 // Assign array values to variables
 
-var nums = [1, 2, 3, 3.4];
+const nums = [1, 2, 3, 3.4]
 
 // Destructuring
 // var [ one, two, three, decimal ] = nums;
@@ -9,13 +9,13 @@ var nums = [1, 2, 3, 3.4];
 // console.log(three);
 // console.log(decimal);
 
-// Using destructuring to swap variables
+//* Using destructuring to swap variables
 
-var name = "doug@gmail.com";
-var email = "doug";
+const name = 'doug@gmail.com'
+const email = 'doug'
 
-// First construct an array from which to destructure
-// Then rename the values
-var [email, username] = [name, email];
-console.log(email);
-console.log(username);
+//? First construct an array from which to destructure
+//? Then rename the values
+const [userEmail, userName] = [name, email]
+console.log(userEmail)
+console.log(userName)
