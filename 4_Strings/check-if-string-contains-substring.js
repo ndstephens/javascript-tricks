@@ -1,15 +1,11 @@
 // Check if string contains substring
 
-const URL = "https://api.github.com/users/reedbarger";
+const URL = 'https://api.github.com/users/reedbarger'
 
-URL.includes("github");
-// true
+console.log(URL.includes('github')) // true
 
-URL.indexOf("reed") > -1;
-// true
+console.log(URL.indexOf('reed') > -1) // true
 
-URL.startsWith("https");
-// true
+console.log(URL.startsWith('https')) // true
 
-const containsWord = URL.endsWith("reedbarger");
-console.log(containsWord); // true
+console.log(URL.endsWith('reedbarger')) // true
